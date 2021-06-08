@@ -1,0 +1,22 @@
+{
+  "name": "bot-wa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "cross-env NODE_EXTRA_CA_CERTS=\"C:\\Users\\USERNAME\\Desktop\\ssl-connect\\intermediate.pem\" node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@open-wa/wa-automate": "^3.11.4",
+    "axios": "^0.21.1",
+    "brainly-scraper": "^1.0.3",
+    "https-proxy-agent": "^5.0.0",
+    "nekobocc": "^1.1.0",
+    "pornhub.js": "^0.2.4",
+    "sastrawijs": "^1.0.3",
+    "ssl-root-cas": "^1.3.1"
+  }
+}
