@@ -31,8 +31,6 @@ function start(bot = new Client()) {
 }
 
 // Create Session
-create({
-  headless: true,
-})
+create()
   .then((client) => start(client))
   .catch((err) => new Error(err))
