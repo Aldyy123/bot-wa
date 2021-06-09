@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js",
-    "start": "cross-env NODE_EXTRA_CA_CERTS=\"C:\\Users\\USERNAME\\Desktop\\ssl-connect\\intermediate.pem\" node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
