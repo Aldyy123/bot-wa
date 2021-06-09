@@ -1,7 +1,5 @@
 const { create, Client } = require('@open-wa/wa-automate')
 const handleMsg = require('./msg')
-var rootCas = require('ssl-root-cas').create()
-const https = require('http')
 
 function start(bot = new Client()) {
   // Jika bot di masukan ke group
@@ -32,16 +30,9 @@ function start(bot = new Client()) {
   })
 }
 
-https.globalAgent.options.ca = rootCas
-
-
 // Create Session
 create({
-  headless : true,
+  headless: true,
 })
   .then((client) => start(client))
   .catch((err) => new Error(err))
-
-  https.createServer((req, res) => {
-    console.log('apa');
-  }).listen(8080)
