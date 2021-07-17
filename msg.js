@@ -10,6 +10,8 @@ const {
   nabiStory,
 } = require('./libs/islamicapi')
 const BotPorn = require('./libs/pornhub')
+const { loveCalculator } = require('./libs/loveCalculator')
+const { cekIp } = require('./libs/cekip')
 
 // Import Json
 const { prefix } = require('./setting/setting.json')
@@ -141,6 +143,20 @@ module.exports = async function handleMsg(bot, msg) {
       console.log(result)
       break
 
+    case 'lovecal':
+      const lovecal = await loveCalculator(arg2, arg3)
+      if(!args2 && !args3){
+        console.log('iyaa');
+        bot.reply(chatId, 'Format chatnya /lovecal namacowo namacewe \n okeee tod')
+      }
+      console.log(lovecal);
+      bot.reply(chatId, `Persetase antara ${lovecal.fname} dan ${lovecal.sname} adalah ${lovecal.percentage}`)
+      break
+
+    case 'cekip':
+      const ip = await cekIp()
+      bot.reply(chatId, `Ini Ip ${ip} mu`)
+      break
     case 'bro':
       await bot.reply(chatId, 'Apa', id)
       break

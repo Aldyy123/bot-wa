@@ -17,6 +17,17 @@ function start(bot = new Client()) {
     }
   })
 
+  // Detect bot logout
+  bot.onStateChanged(async state=>{
+    console.log('statechanged', state)
+    if(state==="CONFLICT" || state==="UNLAUNCHED") client.forceRefocus();
+
+    if(state==='UNPAIRED') {
+      console.log('LOGGED OUT!!!!')
+      await bot.kill()
+    }  
+  });
+
   // Bot di keluarkan dari group
   bot.onRemovedFromGroup((chat) => {
     console.log('Remove Group', chat)
@@ -29,8 +40,16 @@ function start(bot = new Client()) {
     handleMsg(bot, chat)
   })
 }
+const launchConfig = {
+  useChrome: true,
+  autoRefresh:true,
+  cacheEnabled:false,
+  qrTimeout: 30,
+  authTimeout: 30,
+  qrRefreshS: 30
+};
 
 // Create Session
-create()
+create(launchConfig)
   .then((client) => start(client))
   .catch((err) => new Error(err))

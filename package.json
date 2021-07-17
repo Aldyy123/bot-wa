@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@open-wa/wa-automate": "^3.11.4",
+    "@open-wa/wa-automate": "^4.9.0",
     "axios": "^0.21.1",
     "brainly-scraper": "^1.0.3",
     "https-proxy-agent": "^5.0.0",
